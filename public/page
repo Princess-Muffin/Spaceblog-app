@@ -1,0 +1,68 @@
+
+# <!DOCTYPE html>
+# <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+#     <head>
+#         <meta charset="utf-8">
+#         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+#         <title>S P A C E</title>
+
+#          <!-- Styles -->
+#         @vite ('resources/css/app.css')
+        
+#     </head>
+#     <body>
+#          <!-- Flex box containers STARTS -->
+#             <div class="relative min-h-screen flex flex-col items-center justify-center  bg-slate-700">
+                
+#                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
+
+#                     <!-- HEADER STARTS -->
+#                     <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-4 ">
+                        
+#                         <div class="flex  lg:col-start-1 col-span-4">
+#                            <x-application-logo class=" text-left" ></x-application-logo>
+#                         </div>
+
+#                         @if (Route::has('login'))
+#                             <nav class="-mx-3 flex flex-1 justify-end mr-3 gap-4 ">
+#                                 @auth
+#                                     <a
+#                                         href="{{ url('/dashboard') }}"
+#                                         class=" text-white font-medium hover:text-black hover:underline"
+#                                     >
+#                                         Dashboard
+#                                     </a>
+#                                 @else
+#                                     <a
+#                                         href="{{ route('login') }}"
+#                                         class=" text-white font-medium hover:text-black hover:underline text-right "
+#                                     >
+#                                         Log in
+#                                     </a>
+
+#                                     @if (Route::has('register'))
+#                                         <a
+#                                             href="{{ route('register') }}"
+#                                             class=" text-white font-medium hover:text-black hover:underline text-right"
+#                                         >
+#                                             Register
+#                                         </a>
+#                                     @endif
+#                                 @endauth
+#                             </nav>
+#                         @endif
+#                     </header>
+
+#                     <main class="mt-6">
+                        
+#                         <!-- PAGE FOOTER --------------------------------------------------------------------------------------------------->
+
+#                             @include('components.footer')
+
+#                         <!------------------------------------------------------------------------------------------------------------------>
+#                 </div>
+#             </div>
+#         </div>
+#     </body>
+# </html>
