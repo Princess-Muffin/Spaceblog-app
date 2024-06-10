@@ -9,7 +9,7 @@
             @csrf
 
             <!-- Text Rich Editor -->
-            <textarea id="tinymce" name="message" placeholder="{{ __('What\'s on your mind?') }}" class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ old('message') }}</textarea>
+            <textarea id="tinymce" name="message" placeholder="{{ __('Put something out there in S P A C E ...') }}" class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ old('message') }}</textarea>
 
             <div class="flex justify-between items-center mt-6 space-x-6">
                 
@@ -88,9 +88,9 @@
                     </div>
 
                     <!-- Display Post --------------------------------------->
-                    <p class="mt-4 text-lg text-gray-900">{!! html_entity_decode($post->message) !!}</p>
+                    <p class="mt-4 mb-2 text-lg text-gray-900">{!! html_entity_decode($post->message) !!}</p>
                     
-                    <p class="mt-2 text-md text-gray-600">
+                    <p class="mt-2 mb-6 text-md text-gray-600">
 
                         @if($post->emotion)
                             Feeling: {{ $post->emotion->name }} {{ $post->emotion->emoji }}
@@ -101,7 +101,7 @@
 
                     <!-- Comments section --------------------------------------->
                     @foreach ($post->comments as $comment)
-                        <div class="mt-2 text-sm text-gray-600 flex justify-between items-center">
+                        <div class="mt-4 text-sm text-gray-600 flex justify-between items-center">
                             <span class="font-semibold">{{ $comment->user->name }}:</span>
                             
                             @if ($post->user->is(auth()->user()) || $comment->user->is(auth()->user()))
@@ -136,7 +136,7 @@
                         <textarea   name="comment" rows="2" 
                                     class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm  bg-zinc-300 border border-opacity-10 p-2" ></textarea>
                         
-                        <button type="submit" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md ">
+                        <button type="submit" class="mt-2 bg-purple-400 hover:bg-pink-200 text-white font-semibold py-2 px-4 rounded-md ">
                             Add Comment
                         </button>
                     </form>

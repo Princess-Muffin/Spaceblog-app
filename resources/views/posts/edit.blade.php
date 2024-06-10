@@ -1,8 +1,7 @@
-<!-- EXTENDS SPACE LAYOUT AND USES DYNAMIC PAGE HEADING ------------------------------------------------------------------------------------------------>
-@extends('layouts.spaceLayout', ['header' => 'S P A C E '])
+<!-- EXTENDS SPACE LAYOUT AND USES DYNAMIC PAGE HEADING -->
+@extends('layouts.spaceLayout', ['header' => 'S P A C E'])
 
-<!-- PAGE CONTENT --------------------------------------------------------------------------------------------------------------------------------------->
-
+<!-- PAGE CONTENT -->
 @section('content')
 
     @include('components.head.tinymce-config')
@@ -18,29 +17,30 @@
             <div class="flex justify-between items-center mt-6 space-x-6">
                 
                 <!-- EMOTION TAG SELECTOR -->
-                    <div class="flex items-center space-x-6">
-                        <label for="emotion" class="form-label font-medium text-white">
-                            EMOTION
-                        </label>
-                
-                        <select class="form-select p-2" id="emotion" name="emotion_id" required >
-                            <option value="" disabled selected>
-                                FEELING ....
+                <div class="flex items-center space-x-6">
+                    <label for="emotion" class="form-label font-medium text-white">
+                        EMOTION
+                    </label>
+                    <select class="form-select p-2" id="emotion" name="emotion_id" required>
+                        <option value="" disabled selected>
+                            FEELING ....
+                        </option>
+                        @foreach($emotions as $emotion)
+                            <option value="{{ $emotion->id }}" {{ $emotion->id == $post->emotion_id ? 'selected' : '' }}>
+                                {{ $emotion->name }} {{ $emotion->emoji }}
                             </option>
-                
-                            @foreach($emotions as $emotion)
-                                <option value="{{ $emotion->id }}" {{ $emotion->id == $post->emotion_id ? 'selected' : '' }}>
-                                    {{ $emotion->name }} {{ $emotion->emoji }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
+                        @endforeach
+                    </select>
+                </div>
 
-            <div class="mt-4 space-x-2">
-                <x-primary-button>{{ __('Save') }}</x-primary-button>
-                <x-secondary-button ><a href="{{ route('posts.index') }}">{{ __('Cancel') }} </a></x-secondary-button>
+                <!-- Buttons -->
+                <div class="mt-4 space-x-2">
+                    <x-primary-button>{{ __('Save') }}</x-primary-button>
+                    <x-secondary-button>
+                        <a href="{{ route('posts.index') }}">{{ __('Cancel') }}</a>
+                    </x-secondary-button>
+                </div>
             </div>
-
         </form>
     </div>
 

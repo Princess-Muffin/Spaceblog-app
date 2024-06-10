@@ -21,7 +21,7 @@
                     <header  class="col-span-4 ">
                             
                         <!-- NAVIGATION BAR ------------------------------------------------------------------------------------------------------------>
-                        @include('components.navigation')    
+                        @include('components.header')   
 
                     </header>
                 

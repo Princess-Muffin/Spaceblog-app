@@ -5,9 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('Favicons/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('Favicons/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('Favicons/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('Favicons/site.webmanifest') }}">
+        <link rel="mask-icon" href="{{ asset('Favicons/safari-pinned-tab.svg') }}" color="#334155">
+        <meta name="apple-mobile-web-app-title" content="S P A C E">
+        <meta name="application-name" content="S P A C E">
+        <meta name="msapplication-TileColor" content="#334155">
+        <meta name="theme-color" content="#334155">
+
+
+
         <title>S P A C E</title>
 
-        <!-- Styles -->
+        <!-- Styles ------------>
         @vite (['resources/css/app.css' , 'resources/js/app.js'])
 
        
@@ -22,25 +35,25 @@
                 <!-- GRID ITEM 1 ----------------------------------------------------------------------------------------------------------------------->
                     
                     <!-- NAVIGATION BAR ------------------------------------------------------------------------------------------------------------>
-                    <header  class="col-span-4 ">
-                        @include('components.navigation')    
-                    </header>
+                        <header  class="col-span-4 ">
+                            @include('components.header')    
+                        </header>
 
 
                 <!-- GRID ITEM 2 ----------------------------------------------------------------------------------------------------------------------->
                     
                     <!-- APP NAVIGATION BAR -------------------------------------------------------------------------------------------->
-                    @include('components.appNavigation')    
+                        @include('components.appNavigation')    
                 
 
                 <!-- GRID ITEM 3 ----------------------------------------------------------------------------------------------------------------------->
                     
                     <!-- PAGE HEADING ------------------------------------------------------------------------------------------------------------------>
-                    <h1 class="py-12 pb-0 col-span-4 text-white text-2xl text-center tracking-wide font-bold laptop:text-4xl desktop:text-5xl desktop:-tracking-tighter whitespace-normal break-at-nbsp">
-                        @isset($header)
-                            {!! $header !!}
-                        @endisset                           
-                    </h1>
+                        <h1 class="py-12 pb-0 col-span-4 text-white text-2xl text-center tracking-wide font-bold laptop:text-4xl desktop:text-5xl desktop:-tracking-tighter whitespace-normal break-at-nbsp">
+                            @isset($header)
+                                {!! $header !!}
+                            @endisset                           
+                        </h1>
                         
 
                 <!-- GRID ITEM 4 ----------------------------------------------------------------------------------------------------------------------->
@@ -53,9 +66,11 @@
 
                 <!-- GRID ITEM 5 ----------------------------------------------------------------------------------------------------------------------------->
 
-                    <!-- PAGE FOOTER ------------------------------------------------------------------------------------------------------------------------->
-                        @include('components.footer')          
-            </div>
+                    <!-- PAGE FOOTER --------------------------------------------------------------------------------------------------------------------->
+                        <footer class="col-span-4">
+                            @include('components.footer')
+                        </footer>
+                    </div>
             
         <!-- GRID CONTAINER ENDS------------------------------------------------------------------------------------------------------------------------>
     </body>
