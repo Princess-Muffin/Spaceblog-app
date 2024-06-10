@@ -31,3 +31,9 @@
 2. **Post**: Click the space button and enter what’s on your mind.
 3. **Comment**: You can comment on posts made by other users.
 4. **Search**: Click the search button to begin searching tags made on posts.
+5. **Drop down**: Use the drop-down button where your name is presented to navigate to user profile,  posts, and logging out.
+6. **User profile**: update your profile information, password, or delete your account
+7. **Posts**: Redirect you to the space blog where you can view blog posts made by all members of space. You can comment on these posts, and you can create blog posts. Which will alert spacemates of a new post.
+8. **Logout**: Signs you out of space blogging platform and redirects you to the landing page where you can login back in.
+9. **Logo**: When user is logged in, it will redirect user to the dashboard when clicked. When user is not logged in, the logo will redirect user to the welcome page when clicked
+
